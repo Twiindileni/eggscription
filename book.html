@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Page - EGGScription</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background: linear-gradient(to bottom right, #562001, #f3d1c3);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .order-container {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease-in-out;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+        .order-container h2 {
+            margin: 0 0 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+        .order-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .order-container label {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .order-container input[type="text"],
+        .order-container input[type="file"],
+        .order-container select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 16px;
+        }
+        .order-container input[type="file"] {
+            padding: 0;
+        }
+        .order-container button {
+            padding: 15px;
+            font-size: 18px;
+            background-color: #f0c14b;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .order-container button:hover {
+            background-color: #d3a83f;
+        }
+        .chicken-image {
+            width: 300px; /* Adjust the width as needed */
+            animation: fadeIn 1s ease-in-out;
+            display: none;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (min-width: 768px) {
+            .chicken-image {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="order-container">
+            <h2>Order Form</h2>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="cellphone">CellPhone</label>
+                <input type="text" id="cellphone" name="cellphone" required>
+
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="town">Town</label>
+                <input type="text" id="town" name="town" required>
+
+                <label for="product">Select Product</label>
+                <select id="product" name="product" required>
+                    <option value="chicken">Chicken</option>
+                    <option value="cleaned_chicken">Cleaned Chicken</option>
+                    <option value="eggs">Eggs</option>
+                </select>
+
+                <label for="proof">Upload proof of payment</label>
+                <input type="file" id="proof" name="proof" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <img src="chicken.png" alt="Chicken" class="chicken-image">
+    </div>
+</body>
+</html>
